@@ -5,9 +5,9 @@
     .test__intro(v-html="question.intro")
     .test__button(v-if="activeQuestionId == 0")        
       button(@click="begin()") Начать тест 
-   .test__inner(v-else :class="activeTest")
+   .test__inner(v-else)
     .test__title.title-container
-     .title-container__background
+     .title-container
       .title-container__content
        .title-container__counter {{activeQuestionId}} / {{questionsArray.length - 1}}
        .title-container__title(v-html="question.title")   
@@ -22,9 +22,8 @@
        button.next(@click="next()") Далее   
   .result(v-else)
    .result__container
-    .result__background
-     .result__header
-      .result__header-wrap
+    .result__header
+     .result__header-wrap
        .result__title(v-html="result.title")
     .result__content(v-html="result.content")
     .result__button
@@ -58,11 +57,6 @@ export default {
         case 3:
           this.$store.dispatch('result', index)
           return this.$store.getters.resultObj.four;
-      }
-    },
-    activeTest: function () {
-      if (this.$store.getters.activeQuestionId > 0) {
-        return 'active-test'
       }
     },
   },
