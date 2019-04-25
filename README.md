@@ -1,8 +1,8 @@
 # lifelove
 ```
-git clone https://github.com/Mark-Tok/findlove.git
+git clone https://github.com/Mark-Tok/test_psyho.git
 
-cd findlove
+cd test_psyho
 ```
 
 ## Project setup
